@@ -1,0 +1,13 @@
+exclude:      ['README.markdown', 'Gemfile.lock', 'Gemfile']
+title:        'Juraj Blahunka'
+tagline:      'Juraj Blahunka | Java enthusiast'
+description:  'A Java enthusiast'
+url:          http://juraj-blahunka.github.io
+version:      1.1.1
+author:
+  name:       'Juraj Blahunka'
+  email:      'blahunka.juraj@gmail.com'
+markdown:     rdiscount
+permalink:    pretty
+pygments:     true
+paginate:     5
