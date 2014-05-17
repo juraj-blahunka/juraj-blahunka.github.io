@@ -119,7 +119,7 @@ connect
 /system-property=example.bar:add(value="Why is Foo so special?")
 ```
 
-Then **hit refresh** in your browser and voila, our properties where injected:
+Then **hit refresh** in your browser and voila, our properties were injected:
 
 ```
 foo=Special Foo Value, bar=Why is Foo so special?
