@@ -25,15 +25,15 @@ In following lines you will see:
 First, we need to define, how would our default access pattern look. Let's leverage the ```@Inject``` annotation with a
 custom ```@Qualifier```:
 
-``` java
+{% highlight java %}
 @Inject
 @SystemProperty("example.foo")
 String foo;
-```
+{% endhighlight %}
 
 Now, let's define the ```@SystemProperty``` annotation:
 
-``` java
+{% highlight java %}
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
@@ -45,7 +45,7 @@ public @interface SystemProperty {
 	@Nonbinding String value();
 
 }
-```
+{% endhighlight %}
 
 Note, that we do not define ```default ""``` next to our ```value()```, since the property name should be *always* defined.
 Therefore we automatically disallow usage of empty system property ```@SystemProperty()```.
@@ -54,7 +54,7 @@ And how will the System property get from JBoss to our little ```@SystemProperty
 Let's define a provider, who uses the ```@Produces``` annotation and provides our application with
 concrete system properties:
 
-``` java
+{% highlight java %}
 public class SystemPropertyProvider {
 
 	@Produces
@@ -72,7 +72,7 @@ public class SystemPropertyProvider {
 	}
 
 }
-```
+{% endhighlight %}
 
 
 ## Demonstration
@@ -80,7 +80,7 @@ public class SystemPropertyProvider {
 After we have defined our deliver mechanism, we probably want to use our new ```@SystemProperty``` annotation.
 Let's define an example REST resource:
 
-``` java
+{% highlight java %}
 @Path("example")
 public class ExampleResource {
 
@@ -99,7 +99,7 @@ public class ExampleResource {
 	}
 
 }
-```
+{% endhighlight %}
 
 Deploy to JBoss 7 and hit ```http://localhost:8080/inject-jboss-system-properties/example```.
 But what happened? We are getting an exception:

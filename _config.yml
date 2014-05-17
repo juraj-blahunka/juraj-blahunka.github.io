@@ -9,5 +9,6 @@ author:
   email:      'blahunka.juraj@gmail.com'
 markdown:     rdiscount
 permalink:    pretty
+highlighter:  pygments
 pygments:     true
 paginate:     5
