@@ -3,7 +3,7 @@ layout: post
 title: Hello, world!
 ---
 
-I did it! My first steps with new platform and legendary worlds every programmer is happy to see. Hello, world! And hello to you!
+I did it! My first steps with new platform and legendary words every programmer is happy to see. Hello, world! And hello to you!
 
 Welcome to my [Blog](http://juraj.blahunka.eu/), a place, where I will discuss my thoughts on software development. I hope, that I will achieve at least some of following goals:
 
