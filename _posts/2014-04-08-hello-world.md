@@ -11,12 +11,12 @@ Welcome to my [Blog](http://juraj.blahunka.eu/), a place, where I will discuss m
 * Remind myself about stuff I tend to forget, so expect mental notes about small pieces of technology.
 * Create content, which is easy to read, understand and process, so expect a lot of:
 
-``` java
+{% highlight java %}
 try {
 	writeContent();
 } catch (NoPointInPublishingException e) {
 	tryAgain();
 }
-```
+{% endhighlight %}
 
 My name is Juraj Blahunka and I'm Java+.
