@@ -1,3 +1,27 @@
-h1 a:hover {
+h1, h2, h3, h4, h5 {
+	font-family: 'Allan', 'Georgia', 'Times New Roman', serif;
+}
+
+h1 {
+	font-size: 46px;
+}
+
+h1 a, h1 a:hover {
+	text-decoration: none !important;
+}
+
+pre {
+	padding: 10px;
+}
+
+code, pre {
+	font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+}
+
+.post a {
+	text-decoration: underline;
+}
+
+.post a:hover {
 	text-decoration: none;
 }

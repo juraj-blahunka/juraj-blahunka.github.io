@@ -64,20 +64,20 @@ are still present on Master.
 	**Reset available replication information on Slave**, so Slave forgets its own binlogs and Master's relay logs.
 
 	```
-	mysql> RESET SLAVE;
-	mysql> RESET MASTER;
+mysql> RESET SLAVE;
+mysql> RESET MASTER;
 	```
 
 2.
 	Issue a command to **reconfigure replication** by pointing Slave to Master (which was cleared in previous step):
 
 	```
-	mysql> CHANGE MASTER TO
-	MASTER_HOST = '...',
-	MASTER_PORT = ...,
-	MASTER_USER = '...',
-	MASTER_PASSWORD = '...',
-	MASTER_AUTO_POSITION = 1;
+mysql> CHANGE MASTER TO
+MASTER_HOST = '...',
+MASTER_PORT = ...,
+MASTER_USER = '...',
+MASTER_PASSWORD = '...',
+MASTER_AUTO_POSITION = 1;
 	```
 
 3.
@@ -87,36 +87,36 @@ are still present on Master.
 	_The reason, why we want to skip some transactions, is because they were already replicated to Slave before._
 
 	```
-	mysql> SET global GTID_PURGED="3aabcfda-591d-11e3-81f1-0050569a4585:1-14351185";
+mysql> SET global GTID_PURGED="3aabcfda-591d-11e3-81f1-0050569a4585:1-14351185";
 	```
 
 4.
 	We are done with preparations. All, that is left to be done is to **start the replication**:
 
 	```
-	mysql> START SLAVE;
+mysql> START SLAVE;
 	```
 
 5.
 	And check if both Slave replication threads are doing their work without errors:
 
 	```
-	*************************** 1. row ***************************
-	Slave_IO_State: Waiting for master to send event
-	...
-	Slave_IO_Running: Yes
-	Slave_SQL_Running: Yes
-	...
-	Seconds_Behind_Master: 157717
-	Last_IO_Errno: 0
-	Last_IO_Error:
-	Last_SQL_Errno: 0
-	Last_SQL_Error:
-	...
-	Retrieved_Gtid_Set: 3aabcfda-591d-11e3-81f1-0050569a4585:14351185-14805026
-	Executed_Gtid_Set: 3aabcfda-591d-11e3-81f1-0050569a4585:1-14351185
-	Auto_Position: 1
-	1 row in set (0.00 sec)
+*************************** 1. row ***************************
+Slave_IO_State: Waiting for master to send event
+...
+Slave_IO_Running: Yes
+Slave_SQL_Running: Yes
+...
+Seconds_Behind_Master: 157717
+Last_IO_Errno: 0
+Last_IO_Error:
+Last_SQL_Errno: 0
+Last_SQL_Error:
+...
+Retrieved_Gtid_Set: 3aabcfda-591d-11e3-81f1-0050569a4585:14351185-14805026
+Executed_Gtid_Set: 3aabcfda-591d-11e3-81f1-0050569a4585:1-14351185
+Auto_Position: 1
+1 row in set (0.00 sec)
 	```
 
 
