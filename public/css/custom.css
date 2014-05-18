@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	font-size: 46px;
+	font-size: 44px;
 }
 
 h1 a, h1 a:hover {
@@ -16,6 +16,20 @@ pre {
 
 code, pre {
 	font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+}
+
+.masthead {
+	background: #2e2a2e;
+}
+
+.that-is-me {
+	width: 158px;
+	height: 158px;
+	margin: 20px auto;
+	vertical-align: middle;
+	border-radius: 79px;
+	background: url(/public/me.png) no-repeat;
+	box-shadow: 0 0 16px rgba(0, 0, 0, 1);
 }
 
 .post a {
