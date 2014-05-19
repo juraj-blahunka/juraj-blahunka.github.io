@@ -8,11 +8,13 @@
 		{{ site.tagline }}
 	</title>
 
+	{% capture version %}{{ site.time | date: '%Y%m%d%H%M'}}{% endcapture %}
+
 	<!-- CSS -->
 	<link rel="stylesheet" href="/public/css/hyde.css">
 	<link rel="stylesheet" href="/public/css/syntax.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/public/css/custom.css?{{ site.time | date: '%Y%m%d%H%M'}}">
+	<link rel="stylesheet" href="/public/css/custom.css?{{ version }}">
 
 	<link rel="stylesheet"
 		  href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Allan">
