@@ -1,8 +1,8 @@
-exclude:      ['README.markdown', 'Gemfile.lock', 'Gemfile']
+exclude:      ['README.md', 'Gemfile.lock', 'Gemfile']
 title:        'Juraj Blahunka'
 tagline:      'Juraj Blahunka | Java enthusiast'
 description:  'A Java enthusiast'
-url:          http://juraj-blahunka.github.io
+url:          http://juraj.blahunka.eu
 version:      1.1.1
 author:
   name:       'Juraj Blahunka'
