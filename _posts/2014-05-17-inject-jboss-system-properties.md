@@ -25,15 +25,15 @@ In following lines you will see:
 First, we need to define, how would our default access pattern look. Let's leverage the ```@Inject``` annotation with a
 custom ```@Qualifier```:
 
-{% highlight java %}
+~~~ java
 @Inject
 @SystemProperty("example.foo")
 String foo;
-{% endhighlight %}
+~~~
 
 Now, let's define the ```@SystemProperty``` annotation:
 
-{% highlight java %}
+~~~ java
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
@@ -45,7 +45,7 @@ public @interface SystemProperty {
 	@Nonbinding String value();
 
 }
-{% endhighlight %}
+~~~
 
 Note, that we do not define ```default ""``` next to our ```value()```, since the property name should be *always* defined.
 Therefore we automatically disallow usage of empty system property ```@SystemProperty()```.
@@ -54,9 +54,9 @@ And how will the System property get from JBoss to our little ```@SystemProperty
 Let's define a provider, who uses the ```@Produces``` annotation and provides our application with
 concrete system properties:
 
-{% highlight java %}
+~~~ java
 public class SystemPropertyProvider {
-
+^
 	@Produces
 	@SystemProperty("")
 	String findProperty(InjectionPoint ip) {
@@ -72,7 +72,7 @@ public class SystemPropertyProvider {
 	}
 
 }
-{% endhighlight %}
+~~~
 
 
 ## Demonstration
@@ -80,7 +80,7 @@ public class SystemPropertyProvider {
 After we have defined our deliver mechanism, we probably want to use our new ```@SystemProperty``` annotation.
 Let's define an example REST resource:
 
-{% highlight java %}
+~~~ java
 @Path("example")
 public class ExampleResource {
 
@@ -99,30 +99,30 @@ public class ExampleResource {
 	}
 
 }
-{% endhighlight %}
+~~~
 
 Deploy to JBoss 7 and hit ```http://localhost:8080/inject-jboss-system-properties/example```.
 But what happened? We are getting an exception:
 
-```
+~~~
 java.lang.IllegalStateException: System property 'example.foo' is not defined!
 	sk.blahunka.jbossinject.properties.SystemPropertyProvider.findProperty(SystemPropertyProvider.java:15)
-```
+~~~
 
 We forgot about our properties, to define them, we will use the good old jboss-cli.
 On windows, fire up the ```jboss-cli.bat``` executable and type in:
 
-```
+~~~
 connect
 
 /system-property=example.foo:add(value="Special Foo Value")
 /system-property=example.bar:add(value="Why is Foo so special?")
-```
+~~~
 
 Then **hit refresh** in your browser and voila, our properties were injected:
 
-```
+~~~
 foo=Special Foo Value, bar=Why is Foo so special?
-```
+~~~
 
 You can fork the [inject-jboss-system-properties](https://github.com/juraj-blahunka/site-examples/tree/master/inject-jboss-system-properties) project on GitHub.

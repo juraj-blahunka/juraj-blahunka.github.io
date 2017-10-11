@@ -22,11 +22,11 @@ redownload your resources every day.
 This change shuld be very straight forward. Depending on your technology stack, you just provide
 correct configuration. In [nginx](http://wiki.nginx.org/Main), one day resource expiration would look like this:
 
-```
+~~~
 location ~* \.(css)$ {
 	expires 1d;
 }
-```
+~~~
 
 As you can see, it is not very flexible. Either you must always conform to a common filename pattern,
 or you will always have to enumerate all your resources by hand. What if you want to see changed resources
@@ -46,9 +46,9 @@ which were present with previous solution:
 Let's put it to the test. Create a website and add a ```<link>``` to your CSS in the ```<head>``` section.
 If you look into this website sources, you will see following stylesheet declaration:
 
-{% highlight html %}
+~~~ html
 <link rel="stylesheet" href="/public/css/custom.css?201405190923">
-{% endhighlight %}
+~~~
 
 
 Notice the ```201405190923``` parameter in the end. It's the date and time of last build.

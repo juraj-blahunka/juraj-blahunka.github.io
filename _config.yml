@@ -7,7 +7,7 @@ version:      1.1.1
 author:
   name:       'Juraj Blahunka'
   email:      'blahunka.juraj@gmail.com'
-markdown:     rdiscount
+markdown:     kramdown
 permalink:    pretty
-highlighter:  pygments
+highlighter:  rouge
 paginate:     5
