@@ -1,7 +1,7 @@
 exclude:      ['README.md', 'Gemfile.lock', 'Gemfile']
 title:        'Juraj Blahunka'
-tagline:      'Juraj Blahunka | Java enthusiast'
-description:  'A Java enthusiast'
+tagline:      'Juraj Blahunka | Swift enthusiast'
+description:  'A -Java- Swift enthusiast'
 url:          http://juraj.blahunka.eu
 version:      1.1.1
 author:
@@ -10,5 +10,4 @@ author:
 markdown:     rdiscount
 permalink:    pretty
 highlighter:  pygments
-pygments:     true
 paginate:     5

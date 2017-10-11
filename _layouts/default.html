@@ -13,20 +13,12 @@
 
 		<h1><a href="/">{{ site.title }}</a></h1>
 
-		<p class="lead">{{ site.description }}</p>
+		<p class="lead">A <span style="text-decoration: line-through;">Java</span> Swift enthusiast</p>
 
 		<div class="colophon">
 			<ul class="colophon-links">
 				<li>
 					<a href="/archive/">Archive</a>
-				</li>
-			</ul>
-
-			<ul class="colophon-links">
-				<li>
-					<a href="https://dl.dropboxusercontent.com/u/31655127/blahunka-cv-en.pdf">
-						Curriculum Vitae <i class="fa fa-external-link"></i>
-					</a>
 				</li>
 				<li>
 					<a href="https://github.com/juraj-blahunka">
@@ -34,7 +26,7 @@
 					</a>
 				</li>
 			</ul>
-			<p>&copy; 2014. {{ site.author.name }} All rights reserved.</p>
+			<p>&copy; {{ 'now' | date: "%Y" }}. {{ site.author.name }} All rights reserved.</p>
 		</div>
 	</div>
 </header>
